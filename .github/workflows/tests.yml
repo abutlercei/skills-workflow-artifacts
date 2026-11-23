@@ -38,7 +38,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx playwright install-deps && npx playwright install
+      - run: npm i playwright@latest && npx playwright install --with-deps chromium
       - run: npm run test:e2e
       - uses: actions/upload-artifact@v7
         with:
